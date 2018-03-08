@@ -9,7 +9,7 @@ document.getElementById("confirm-button").click();
 
 
 
-// final script using callbacks
+// final script using callbacks, deletes all comments
 
 var DELAY = 0; // try 0, then try increasing values
 var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");

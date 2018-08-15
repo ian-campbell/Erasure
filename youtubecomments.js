@@ -1,6 +1,9 @@
 
 
-// final script using callbacks, deletes all comments
+// final script using callbacks, deletes all comments.
+// Paste everything below into the javascript console while on
+// your YouTube account's 'Comments' page. If it doesn't remove
+// all comments in the first try, just do it again.
 
 var DELAY = 0; // try 0, then try increasing values
 var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");

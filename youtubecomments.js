@@ -1,7 +1,6 @@
 
 
 // final script using callbacks, deletes all comments
->>>>>>> 23f610cca83fbbec27754f402504cd2c449e1aca
 
 var DELAY = 0; // try 0, then try increasing values
 var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");

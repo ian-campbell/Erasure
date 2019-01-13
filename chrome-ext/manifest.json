@@ -3,8 +3,12 @@
   "version": "1.0",
   "description": "Build an Extension!",
   "manifest_version": 2,
+  "permissions": ["storage"],
   "background":{
 	"scripts": ["background.js"],
 	"persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
   }
 }

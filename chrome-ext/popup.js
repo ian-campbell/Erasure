@@ -1,4 +1,4 @@
-let changeColor = document.getElementById('changeColor');
+let changeColor = document.getElementById('deleteComments');
 let navigate = document.getElementById('navigate');
 
 chrome.storage.sync.get('color', function(data) {
@@ -6,7 +6,7 @@ chrome.storage.sync.get('color', function(data) {
     changeColor.setAttribute('value', data.color);
 });
 
-changeColor.onclick = function(element) {
+deleteComments.onclick = function(element) {
     let color = element.target.value;
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         chrome.tabs.executeScript(
@@ -15,7 +15,7 @@ changeColor.onclick = function(element) {
 };
 
 navigate.onclick = function(element) {
-    chrome.tabs.query({
-        active:true,
-        url:'https://www.youtube.com/feed/history/comment_history'});
+    chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
+        chrome.tabs.update(tabs[0].id, {url:'https://www.youtube.com/feed/history/comment_history'})
+    });
 };

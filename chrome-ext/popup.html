@@ -3,18 +3,25 @@
 
 <head>
     <style>
+    body {
+        width:400px;
+        height:300px;
+    }
     button {
-        height: 30px;
-        width: 30px;
-        outline: none;
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        margin: 10px;
+        outline: 2px;
     }
     </style>
 </head>
 
 <body>
-    <button id="changeColor"></button>
-    <p>Please navigate to <a href="https://www.youtube.com/feed/history/comment_history">your YT comment history</a></p>
-    <button id="navigate"></button>
+    <button id="navigate">Click to navigate to your comment history</button>
+
+    <button id="deleteComments">Click to delete all comments</button>
+   
     <script src="popup.js"></script>
 </body>
 

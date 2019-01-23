@@ -1,4 +1,5 @@
 let changeColor = document.getElementById('changeColor');
+let navigate = document.getElementById('navigate');
 
 chrome.storage.sync.get('color', function(data) {
     changeColor.style.backgroundColor = data.color;
@@ -11,4 +12,10 @@ changeColor.onclick = function(element) {
         chrome.tabs.executeScript(
             tabs[0].id, { file: 'script.js' });
     });
+};
+
+navigate.onclick = function(element) {
+    chrome.tabs.query({
+        active:true,
+        url:'https://www.youtube.com/feed/history/comment_history'});
 };

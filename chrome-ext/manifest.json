@@ -1,7 +1,7 @@
 {
-    "name": "Getting Started Example",
+    "name": "YT Comments Deleter",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "Delete all of a user's comments on YT",
     "permissions": ["activeTab", "declarativeContent", "storage"],
     "background":
     {

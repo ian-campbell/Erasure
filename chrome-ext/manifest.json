@@ -1,7 +1,7 @@
 {
-    "name": "YT Comments Deleter",
+    "name": "Erasure",
     "version": "1.0",
-    "description": "Delete all of a user's comments on YT",
+    "description": "Delete your Tube comment history",
     "permissions": ["activeTab", "declarativeContent", "storage"],
     "background":
     {

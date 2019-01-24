@@ -1,7 +1,7 @@
 # Erasure
 
 
-Chrome extension for clearing your YouTube comment history.
+Chrome extension for deleting your YouTube comment history.
 
 Find us in the Chrome Web Store, or add the extension manually. 
 

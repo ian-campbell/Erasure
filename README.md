@@ -1,17 +1,14 @@
 # Erasure
 
+Script for deleting your YouTube comment history.
 
-Chrome extension for deleting your YouTube comment history.
-
-Find us in the Chrome Web Store, or add the extension manually:
-1. Download the repository and unzip all the files
-2. In Chrome, go to chrome://extensions
-3. Click "Load Unpacked" 
-4. Load the "chrome-ext" folder.
+Navigate to https://www.youtube.com/feed/history/comment_history and then open
+the JavaScript console, and paste the entire script from "script.js"
 
 
-To simply run the JavaScript script yourself, navigate to 
-https://www.youtube.com/feed/history/comment_history and then open
-the JavaScript console with Ctrl + Shift + J, or Cmd + Option + J 
-(Windows or Mac, respectively), and copy/paste the entire script from
-"script.js"
+You can also add the Erasure Chrome extension: 
+
+https://chrome.google.com/webstore/detail/erasure/lkhceldiinefjkocccdmpgheheeddfmb?hl=en-US
+
+
+Feedback is appreciated.

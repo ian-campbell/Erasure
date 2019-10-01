@@ -1,6 +1,6 @@
 let changeColor = document.getElementById('deleteComments');
 let navigate = document.getElementById('navigate');
-let deletePrivateComments = document.getElementByID('deletePrivateComments');
+let deletePrivateComments = document.getElementById('deletePrivateComments');
 
 chrome.storage.sync.get('color', function(data) {
     changeColor.style.backgroundColor = data.color;

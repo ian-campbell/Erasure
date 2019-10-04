@@ -65,3 +65,22 @@ function doOne(i) {
     });
 }
 doOne(0);
+
+l = document.getElementsByClassName('_6a _6b uiPopover rfloat')
+l[0].children[0].click()
+
+
+
+document.querySelectorAll('a[ajaxify="/allactivity/removecontent/?category_key=commentscluster&action=remove_comment&ent_identifier=S%3A_I5742869%3A2160634354040540%3A23&story_dom_id=u_4t_4&timeline_token=5742869%3A2160634354040540%3A23%3A1570053191%3A1570040366"]');
+
+$('a[ajaxify="/allactivity/removecontent/?category_key=commentscluster&action=remove_comment&ent_identifier=S%3A_I5742869%3A2160634354040540%3A23&story_dom_id=u_4t_4&timeline_token=5742869%3A2160634354040540%3A23%3A1570053191%3A1570040366"]')
+
+
+ajaxify = "/allactivity/removecontent/?category_key=commentscluster&action=remove_comment&ent_identifier=S%3A_I5742869%3A2160634354040540%3A23&story_dom_id=u_4t_4&timeline_token=5742869%3A2160634354040540%3A23%3A1570053191%3A1570040366"
+
+ajaxify_2 = "/allactivity/removecontent/?category_key=commentscluster&action=remove_comment&ent_identifier=S%3A_I5742869%3A2160634354040540%3A21&story_dom_id=u_4t_a&timeline_token=5742869%3A2160634354040540%3A21%3A1570052530%3A1570040366"
+
+
+
+
+

@@ -150,6 +150,11 @@ function listClick(element, callback1, callback2, callback3) {
 }
 function doOne() {
 	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
+	var ll = myList.length;
+	console.log(`${ll}`);
+	if (myList.length < 10 ) {
+		window.scrollTo(0, document.body.scrollHeight);
+	}
 	console.log('first list made')
 	listClick(myList[0], itemClick, confirmClick, function() {
         	console.log('recursive step')

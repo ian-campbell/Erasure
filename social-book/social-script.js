@@ -66,7 +66,7 @@ l = document.getElementsByClassName('_6a _6b uiPopover rfloat');
 //opens the first delete menu
 l[0].children[0].click();
 //clicks the Delete button -- i must be incremented
-document.getElementsByClassName("_54nc")[i].click();
+document.getElementsByClassName("_54nc").pop().click();
 
 
 var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
@@ -91,30 +91,41 @@ stateChange(myList)
 
 var DELAY = 7000; // try 0, then try increasing values
 var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
+
+
+//working script
 function confirmClick(callback3) {
     console.log('confirmClick activated and passed');
-    setTimeout(callback3, DELAY);
+    setTimeout(callback3, 0);
 }
 function itemClick(callback2, i, callback3)  {
-	document.getElementsByClassName("_54nc")[i].click();
-    setTimeout(callback2, DELAY, callback3);
+	console.log('itemclick activated and passed');
+	var d = document.getElementsByClassName("_54nc");
+	console.log('list of delete buttons made');
+	var elem = d.length - 1;
+	console.log('last element number found');
+	d[elem].click();
+	console.log('delete button clicked');
+    setTimeout(callback2, 3000, callback3);
 }
 function listClick(element, callback1, callback2, i, callback3) {
-
     element.children[0].click();
-    setTimeout(callback1, DELAY, callback2, i, callback3);
+    console.log('listclick activated and passed');
+    setTimeout(callback1, 0, callback2, i, callback3);
 }
 function doOne(i) {
 	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
+	console.log('first list made')
 	listClick(myList[0], itemClick, confirmClick, i, function() {
         ++i;
         if (i < myList.length) {
+        	console.log('recursive step')
             doOne(i);
         }
     });
 }
-doOne(0);
-
+setTimeout(doOne(0), 3000)
+//working script
 
 
 

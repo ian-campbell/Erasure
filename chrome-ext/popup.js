@@ -6,6 +6,8 @@ chrome.storage.sync.get('color', function(data) {
     changeColor.setAttribute('value', data.color);
 });
 
+
+//relevant code 
 deleteComments.onclick = function(element) {
     let color = element.target.value;
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
@@ -13,9 +15,14 @@ deleteComments.onclick = function(element) {
             tabs[0].id, { file: 'script.js' });
     });
 };
-
 navigate.onclick = function(element) {
     chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
         chrome.tabs.update(tabs[0].id, {url:'https://www.youtube.com/feed/history/comment_history'})
+    });
+};
+deleteFb.onclick = function(element) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){
+        chrome.tabs.executeScript(
+            tabs[0].id, {file: 'fbscript.js'});
     });
 };

@@ -165,6 +165,13 @@ setTimeout(doOne(), 3000)
 //better working script
 
 
+window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        setTimeout(doOne(), 3000);
+    }
+}
 
 document.querySelectorAll('a[ajaxify="/allactivity/removecontent/?category_key=commentscluster&action=remove_comment&ent_identifier=S%3A_I5742869%3A2160634354040540%3A23&story_dom_id=u_4t_4&timeline_token=5742869%3A2160634354040540%3A23%3A1570053191%3A1570040366"]');
 

@@ -61,12 +61,16 @@ function doOne(i) {
 doOne(0);
 
 
+//main script functions:
 //creates collection of all Delete Menu buttons
 l = document.getElementsByClassName('_6a _6b uiPopover rfloat');
 //opens the first delete menu
 l[0].children[0].click();
-//clicks the Delete button -- i must be incremented
-document.getElementsByClassName("_54nc").pop().click();
+//clicks the Delete button
+var d = document.getElementsByClassName("_54nc");
+var elem = d.length - 1
+d[elem].click();
+//main script functions
 
 
 var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
@@ -101,7 +105,9 @@ function confirmClick(callback3) {
 function itemClick(callback2, i, callback3)  {
 	console.log('itemclick activated and passed');
 	var d = document.getElementsByClassName("_54nc");
+
 	console.log('list of delete buttons made');
+
 	var elem = d.length - 1;
 	console.log('last element number found');
 	d[elem].click();
@@ -134,13 +140,19 @@ function confirmClick(callback3) {
     setTimeout(callback3, 0);
 }
 function itemClick(callback2, callback3)  {
-	console.log('itemclick activated and passed');
+
 	var d = document.getElementsByClassName("_54nc");
+
 	console.log('list of delete buttons made');
+
 	var elem = d.length - 1;
+
 	console.log('last element number found');
+
 	d[elem].click();
+
 	console.log('delete button clicked');
+
     setTimeout(callback2, 3000, callback3);
 }
 function listClick(element, callback1, callback2, callback3) {

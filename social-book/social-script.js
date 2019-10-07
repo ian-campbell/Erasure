@@ -69,7 +69,9 @@ l[0].children[0].click();
 //clicks the Delete button
 var d = document.getElementsByClassName("_54nc");
 var elem = d.length - 1
-d[elem].click();
+if elem >= 0 {
+	d[elem].click();
+}
 //main script functions
 
 
@@ -97,31 +99,25 @@ var DELAY = 7000; // try 0, then try increasing values
 var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
 
 
-//working script
+//best working script
 function confirmClick(callback3) {
-    console.log('confirmClick activated and passed');
     setTimeout(callback3, 0);
 }
 function itemClick(callback2, i, callback3)  {
-	console.log('itemclick activated and passed');
 	var d = document.getElementsByClassName("_54nc");
-
-	console.log('list of delete buttons made');
-
-	var elem = d.length - 1;
-	console.log('last element number found');
+	var elem = i;
 	d[elem].click();
-	console.log('delete button clicked');
     setTimeout(callback2, 3000, callback3);
 }
 function listClick(element, callback1, callback2, i, callback3) {
     element.children[0].click();
-    console.log('listclick activated and passed');
     setTimeout(callback1, 0, callback2, i, callback3);
 }
 function doOne(i) {
 	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
-	console.log('first list made')
+	if (myList.length < 10 ) {
+		window.scrollTo(0, document.body.scrollHeight);
+	}
 	listClick(myList[0], itemClick, confirmClick, i, function() {
         ++i;
         if (i < myList.length) {
@@ -131,28 +127,17 @@ function doOne(i) {
     });
 }
 setTimeout(doOne(0), 3000)
-//working script
+//best working script
 
 
 //better working script
 function confirmClick(callback3) {
-    console.log('confirmClick activated and passed');
     setTimeout(callback3, 0);
 }
 function itemClick(callback2, callback3)  {
-
 	var d = document.getElementsByClassName("_54nc");
-
-	console.log('list of delete buttons made');
-
 	var elem = d.length - 1;
-
-	console.log('last element number found');
-
 	d[elem].click();
-
-	console.log('delete button clicked');
-
     setTimeout(callback2, 3000, callback3);
 }
 function listClick(element, callback1, callback2, callback3) {
@@ -167,7 +152,6 @@ function doOne() {
 	if (myList.length < 10 ) {
 		window.scrollTo(0, document.body.scrollHeight);
 	}
-	console.log('first list made')
 	listClick(myList[0], itemClick, confirmClick, function() {
         	console.log('recursive step')
             doOne();

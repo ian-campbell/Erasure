@@ -12,18 +12,22 @@ function listClick(element, callback1, callback2, i, callback3) {
     element.children[0].click();
     setTimeout(callback1, 0, callback2, i, callback3);
 }
-function doOne(i) {
+function doOne(i,n) {
 	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
+	var n = n;
 	if (myList.length < 10 ) {
 		window.scrollTo(0, document.body.scrollHeight);
 	}
-	listClick(myList[0], itemClick, confirmClick, i, function() {
+	if (l[n].innerText === "Report/Remove Tag"){
+    	++n;
+	}
+	listClick(myList[n], itemClick, confirmClick, i, function() {
         ++i;
         if (i < myList.length) {
-        	console.log('recursive step')
-            doOne(i);
+        	console.log('recursive step try');
+            doOne(i,n);
         }
     });
 }
-setTimeout(doOne(0), 3000)
+setTimeout(doOne(0,0), 3000)
 //best working script

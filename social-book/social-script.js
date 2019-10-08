@@ -33,9 +33,26 @@ p[0].querySelector('#u_fetchstream_2_1')
 
 //breakthrough, use dots instead of spaces in classname 
 document.querySelector('div._6a._6b.uiPopover.rfloat')
+var arf = document.querySelectorAll('._6a._6b.uiPopover.rfloat')
+arf[i].children[0].click()
+var d = document.getElementsByClassName("_54nc");
+if (d[n].innerText === "Report/Remove Tag"){
+    	++n;
+}
 
-
-
+var n = 0;
+function myFunc(i,n){
+	var arf = document.querySelectorAll('._6a._6b.uiPopover.rfloat')
+	arf[n].children[0].click()
+	var ee = document.querySelectorAll("._54nc");
+	if (ee[n].innerText === "Report/Remove Tag"){
+	    ++n;
+	    myFunc(i, n)
+	}
+	else {
+		++n;
+	}
+}
 
 var DELAY = 7000; // try 0, then try increasing values
 var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
@@ -67,7 +84,6 @@ function doOne(i,n) {
 	listClick(myList[n], itemClick, confirmClick, i, function() {
         ++i;
         if (i < myList.length) {
-        	console.log('recursive step try');
             doOne(i,n);
         }
     });
@@ -80,28 +96,41 @@ setTimeout(doOne(0,0), 3000)
 function confirmClick(callback3) {
     setTimeout(callback3, 0);
 }
-function itemClick(callback2, callback3)  {
+function itemClick(callback2, i, callback3)  {
 	var d = document.getElementsByClassName("_54nc");
-	var elem = d.length - 1;
+	var elem = i;
 	d[elem].click();
     setTimeout(callback2, 3000, callback3);
 }
-function listClick(element, callback1, callback2, callback3) {
+function listClick(element, callback1, callback2, i, callback3) {
     element.children[0].click();
-    console.log('listclick activated and passed');
-    setTimeout(callback1, 0, callback2, callback3);
+    setTimeout(callback1, 3000, callback2, i, callback3);
 }
-function doOne() {
-	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
-	var ll = myList.length;
-	console.log(`${ll}`);
+function doOne(i,n) {
+	console.log(`doOne step ${i}`)
+	var myList = document.querySelectorAll('._6a._6b.uiPopover.rfloat');
+	var n = n;
+	myList[n].children[0].click()
+	var d = document.getElementsByClassName("_54nc");
+
+	//check if button is for reporting a mention
+	if (d[i].innerText === "Report/Remove Tag"){
+	    ++n;
+	    ++i;
+	    doOne(i,n);
+	}
+	//scroll down if list is less than 10
 	if (myList.length < 10 ) {
 		window.scrollTo(0, document.body.scrollHeight);
 	}
-	listClick(myList[0], itemClick, confirmClick, function() {
-        	console.log('recursive step')
-            doOne();
+
+	listClick(myList[n], itemClick, confirmClick, i, function() {
+        ++i;
+        if (i < myList.length) {
+        	console.log(`${i} ${n}`)
+            setTimeout(doOne(i,n), 6000);
+        }
     });
 }
-setTimeout(doOne(), 3000)
+setTimeout(doOne(0,0), 6000)
 //better working script

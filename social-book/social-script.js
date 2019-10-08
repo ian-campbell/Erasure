@@ -26,9 +26,13 @@ d[i].click();
 
 //main script functions
 //new good function, all tables
-p =document.getElementsByClassName('uiGrid _51mz _5f0n')
+var p = document.getElementsByClassName('uiGrid _51mz _5f0n')
 
+p[0].querySelector('._42ef').innerText
+p[0].querySelector('#u_fetchstream_2_1')
 
+//breakthrough, use dots instead of spaces in classname 
+document.querySelector('div._6a._6b.uiPopover.rfloat')
 
 
 

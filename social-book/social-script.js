@@ -5,6 +5,26 @@
 
 
 
+function goNow(i){
+	var i = i;
+	if (i >= 5){
+		for (var e = 0; e<i; i++){
+			var d = document.getElementsByClassName('_54nc');
+			setTimeout(d[e].click(), 3000)
+			console.log('delete button clicked')
+		}
+	}
+	else{
+		var arf = document.querySelectorAll('._6a._6b.uiPopover.rfloat');
+		arf[i].children[0].click();
+		++i;
+		console.log('recursive step')
+		setTimeout(goNow(i), 5000);
+    }
+}
+
+
+
 //main script functions:
 //create collection of all Delete Menu buttons
 var l = document.getElementsByClassName('_6a _6b uiPopover rfloat');

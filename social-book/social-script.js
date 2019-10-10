@@ -1,6 +1,20 @@
-
-
-
+function goNow(i){
+	var i = i;
+	if (i >= 5){
+		for (var e = 0; e<i; i++){
+			var d = document.getElementsByClassName('_54nc');
+			setTimeout(d[e].click(), 3000)
+			console.log('delete button clicked')
+		}
+	}
+	else{
+		var arf = document.querySelectorAll('._6a._6b.uiPopover.rfloat');
+		arf[i].children[0].click();
+		++i;
+		console.log('recursive step')
+		setTimeout(goNow(i), 5000);
+    }
+}
 
 
 
@@ -22,6 +36,7 @@ function goNow(i){
 		setTimeout(goNow(i), 5000);
     }
 }
+
 
 
 
@@ -80,35 +95,41 @@ var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
 
 //best working script
 function confirmClick(callback3) {
-    setTimeout(callback3, 0);
+    setTimeout(callback3, 1000);
 }
-function itemClick(callback2, i, callback3)  {
+function itemClick(callback2, callback3)  {
 	var d = document.getElementsByClassName("_54nc");
-	var elem = i;
-	d[elem].click();
-    setTimeout(callback2, 3000, callback3);
-}
-function listClick(element, callback1, callback2, i, callback3) {
-    element.children[0].click();
-    setTimeout(callback1, 0, callback2, i, callback3);
-}
-function doOne(i,n) {
-	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
-	var n = n;
-	if (myList.length < 10 ) {
-		window.scrollTo(0, document.body.scrollHeight);
+	if (d.length > 5){
+		for (var e=0; e < 5; e++){
+			setTimeout(d[e].click(), 3000);
+		}
+		return;
 	}
-	if (l[n].innerText === "Report/Remove Tag"){
+    setTimeout(callback2, 0, callback3);
+}
+function listClick(element, callback1, callback2, callback3) {
+	console.log('clicked delete menu button and added to list');
+    element.children[0].click();
+    setTimeout(callback1, 0, callback2, callback3);
+}
+function doOne(n) {
+	var myList = document.querySelectorAll('._6a._6b.uiPopover.rfloat');
+	console.log(`${n}`);
+	var n = n;
+	console.log(`${n}`);
+	//if (myList.length < 10 ) {
+	//	window.scrollTo(0, document.body.scrollHeight);
+	//}
+	if (myList[n].innerText === "Report/Remove Tag"){
     	++n;
 	}
-	listClick(myList[n], itemClick, confirmClick, i, function() {
-        ++i;
-        if (i < myList.length) {
-            doOne(i,n);
-        }
+	listClick(myList[n], itemClick, confirmClick, function() {
+        console.log('recursive step');
+        ++n;
+        setTimeout(doOne(n), 2000);
     });
 }
-setTimeout(doOne(0,0), 3000)
+setTimeout(doOne(0,0), 0)
 //best working script
 
 

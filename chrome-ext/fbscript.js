@@ -15,12 +15,15 @@ function listClick(element, callback1, callback2, i, callback3) {
 function doOne(i,n) {
 	var myList = document.getElementsByClassName('_6a _6b uiPopover rfloat');
 	var n = n;
+	var p = n + 1;
 	if (myList.length < 10 ) {
 		window.scrollTo(0, document.body.scrollHeight);
 	}
-	if (l[n].innerText === "Report/Remove Tag"){
+	if (myList[n].innerText === "Report/Remove Tag"){
     	++n;
 	}
+
+	if ()
 	listClick(myList[n], itemClick, confirmClick, i, function() {
         ++i;
         if (i < myList.length) {

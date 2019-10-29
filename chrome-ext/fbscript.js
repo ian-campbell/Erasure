@@ -1,4 +1,4 @@
-//best working script
+//doesnt work
 function confirmClick(callback3) {
     setTimeout(callback3, 0);
 }
@@ -33,4 +33,4 @@ function doOne(i,n) {
     });
 }
 setTimeout(doOne(0,0), 3000)
-//best working script
+//doesnt work

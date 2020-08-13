@@ -1,4 +1,11 @@
-var DELAY = 0; // try 0, then try increasing values
+// try 0, then try increasing values. this is delay between comment deletions
+var DELAY = 0;
+
+// if script ends but yt has more comments loading then increase this pause value.
+// this provides 1 retry attempt between list updates. useful for slow cpu/network.
+// (electronoob: 800 was the ideal value for my machine)
+var PAUSE = 0;
+
 var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");
 
 
@@ -30,13 +37,32 @@ function listClick(element, callback1, callback2, callback3) {
     setTimeout(callback1, DELAY, callback2, callback3);
 }
 
-function doOne(i) {
-    listClick(myList[i], itemClick, confirmClick, function() {
-        ++i;
-        if (i < myList.length) {
-            doOne(i);
+//check for available comments
+function commentsAvailable () {
+    for(x of document.getElementsByTagName("ytd-comment-history-entry-renderer")) {
+        if(x.getAttribute("is-dismissed") == null) {
+            return true;
         }
-    });
+    }
+    return false;
+}
+
+function doOne(i) {
+    if(commentsAvailable()) {
+        listClick(myList[i], itemClick, confirmClick, function() {
+            ++i;
+            if (i < myList.length) {
+                doOne(i);
+            }else {
+                console.log("erasure: attempting to retry in %s ms",PAUSE);
+                setTimeout(()=>{
+                    doOne(0);
+                },PAUSE);
+            }
+        });
+    } else {
+        console.log("erasure: there are no comments, exiting.");
+    }
 }
 
 doOne(0);

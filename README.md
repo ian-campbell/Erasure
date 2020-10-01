@@ -11,3 +11,7 @@ You can also add the Erasure Chrome extension: https://chrome.google.com/webstor
 Update 1.6
 
 Now deletes comments on private videos.
+
+Update 1.7
+
+Now deletes Live Chats

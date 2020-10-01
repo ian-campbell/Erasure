@@ -1,6 +1,6 @@
 {
     "name": "Erasure",
-    "version": "1.6",
+    "version": "1.7",
     "description": "Clear your YouTube comment history",
     "permissions": ["activeTab", "declarativeContent", "storage"],
     "background":

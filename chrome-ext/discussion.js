@@ -8,11 +8,58 @@ var PAUSE = 8000;
 
 var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");
 
+//second delete button
+function confirmClick(callback3) {
+    document.getElementsByClassName("yt-simple-endpoint style-scope yt-button-renderer")[1].click();
+    setTimeout(callback3, DELAY);
+}
 
-// delete button for owner comments
-document.getElementsByClassName("yt-simple-endpoint style-scope ytd-menu-navigation-item-renderer")[1].click();
+//first delete button
+function itemClick(callback2, callback3)  {
+    //delete owner comment
+    try {
+        document.getElementsByClassName("yt-simple-endpoint style-scope ytd-menu-navigation-item-renderer")[1].click();
+        setTimeout(callback3, DELAY);
+    }
+    //delete regular comment
+    catch{
+        document.getElementsByClassName("style-scope ytd-menu-popup-renderer")[1].click();
+        setTimeout(callback2, DELAY, callback3);
+    }
+}
 
+//open edit/delete menu
+function listClick(element, callback1, callback2, callback3) {
+    element.click();
+    setTimeout(callback1, DELAY, callback2, callback3);
+}
 
-// delete button for others' comments
-document.getElementsByClassName("style-scope ytd-menu-popup-renderer")[1].click();
-document.getElementsByClassName("yt-simple-endpoint style-scope yt-button-renderer")[1].click();
+//check for available comments
+function commentsAvailable () {
+    for(x of document.getElementsByTagName("ytd-comment-thread-renderer")) {
+        if(x.getAttribute("is-dismissed") == null) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function doOne(i) {
+    if(commentsAvailable()) {
+        listClick(myList[i], itemClick, confirmClick, function() {
+            ++i;
+            if (i < myList.length) {
+                doOne(i);
+            }else {
+                console.log("erasure: attempting to retry in %s ms",PAUSE);
+                setTimeout(()=>{
+                    doOne(0);
+                },PAUSE);
+            }
+        });
+    } else {
+        console.log("erasure: there are no comments, exiting.");
+    }
+}
+
+doOne(0);

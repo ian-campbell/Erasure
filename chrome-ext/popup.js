@@ -42,6 +42,7 @@ deleteLiveChats.onclick = function(element) {
 
 deleteDiscussions.onclick = function(element) {
     chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
-        chrome.tabs.update
-    })
+        chrome.tabs.executeScript(
+            tabs[0].id, { file: 'discussion.js' });
+    });
 };

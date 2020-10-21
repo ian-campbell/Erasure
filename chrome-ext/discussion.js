@@ -19,12 +19,12 @@ function itemClick(callback2, callback3)  {
     //delete owner comment
     try {
         document.getElementsByClassName("yt-simple-endpoint style-scope ytd-menu-navigation-item-renderer")[1].click();
-        setTimeout(callback3, DELAY);
+        setTimeout(callback2, DELAY, callback3);
     }
     //delete regular comment
     catch{
         document.getElementsByClassName("style-scope ytd-menu-popup-renderer")[1].click();
-        setTimeout(callback2, DELAY, callback3);
+        setTimeout(callback3, DELAY);
     }
 }
 

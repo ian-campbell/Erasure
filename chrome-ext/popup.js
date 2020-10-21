@@ -3,6 +3,8 @@ let navigate = document.getElementById('navigate');
 let deleteComments = document.getElementById('deleteComments');
 let deleteLiveChats = document.getElementById('deleteLiveChats');
 let liveChats = document.getElementById('liveChats');
+let discussions = document.getElementById('discussions');
+let deleteDiscussions = document.getElementById('deleteDiscussions');
 
 chrome.storage.sync.get('color', function(data) {
     changeColor.style.backgroundColor = data.color;
@@ -36,4 +38,10 @@ deleteLiveChats.onclick = function(element) {
         chrome.tabs.executeScript(
             tabs[0].id, { file: 'live_chats.js' });
     });
+};
+
+deleteDiscussions.onclick = function(element) {
+    chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
+        chrome.tabs.update
+    })
 };

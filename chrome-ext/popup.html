@@ -17,8 +17,10 @@
     }
 
     .content {
-        display: none;
+        padding: 0 18px;
+        max-height: 0;
         overflow: hidden;
+        transition: max-height 0.2s ease-out;
         background-color: #f1f1f1;
     }
     .active, .collapsible:hover {
@@ -51,7 +53,7 @@
         <button style="flex:0.3; background-color: #4688f1;" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
     <div style="display:flex;" >
-        <button style="flex:0.3;" class="collapsible" type="button" id="discussion">Open collapsible
+        <button style="flex:0.3;" class="collapsible" type="button" id="discussion">Open collapsible</button>
 
             <div class="content">
 
@@ -59,7 +61,6 @@
 
             </div>
 
-        </button>
 
         
 

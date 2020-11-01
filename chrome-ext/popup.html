@@ -29,7 +29,7 @@
     .content {
         padding: 0 18px;
         max-height: 0;
-        overflow: auto;
+        overflow: hidden;
         transition: max-height 0.2s ease-out;
         background-color: #f1f1f1;
     }
@@ -41,7 +41,6 @@
         background-color: #eee;
         color: #444;
         cursor: pointer;
-        width: 100%;
         border-radius: 3px;
         height: 100px;
         padding: 10px;
@@ -64,15 +63,18 @@
         <button style="flex:0.3;" id="liveChats">Click to navigate to your Live Chats history</button>
         <button style="flex:0.3;" class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
-    <div class="collapsible" id="discussion">
-            <p>
+    <div style="display:flex;">
 
-        Go to https://www.youtube.com/user/{YOUR USERNAME}/discussion</p></div>
+        <div class="collapsible" style="flex:0.3;">
+            Go to https://www.youtube.com/user/{YOUR_USERNAME}/discussion
+
+        </div>
 
 
         
 
-        <button style="flex:0.3; display:none; background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
+        <button style="flex:0.3; background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
+    </div>
     
 
     <script src="popup.js"></script>

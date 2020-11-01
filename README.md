@@ -15,3 +15,7 @@ Now deletes comments on private videos.
 Update 1.7
 
 Now deletes Live Chats
+
+Update 1.9
+
+Now deletes channel Discussions

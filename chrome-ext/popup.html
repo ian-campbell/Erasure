@@ -15,6 +15,16 @@
         margin: 10px;
         outline: 2px;
     }
+    button:hover{
+        background-color: yellow;
+    }
+    button:active{
+        background-color:green;
+    }
+    .delete{
+        background-color:#4688f1;
+    }
+
 
     .content {
         padding: 0 18px;
@@ -34,12 +44,11 @@
         width: 100%;
         border-radius: 3px;
         height: 100px;
-        width: 100px;
         padding: 10px;
         margin: 10px;
         outline: 2px;
-        overflow: auto;
     }
+
     </style>
 
 
@@ -49,14 +58,13 @@
     <div style="display:flex;">
         <button style="flex:0.3;" id="navigate">Click to navigate to your comment history</button>
 
-        <button style="flex:0.3; background-color: #4688f1;" id="deleteComments">Click to delete all comments</button>
+        <button style="flex:0.3;" class="delete" id="deleteComments">Click to delete all comments</button>
     </div>
     <div style="display:flex;">
         <button style="flex:0.3;" id="liveChats">Click to navigate to your Live Chats history</button>
-        <button style="flex:0.3; background-color: #4688f1;" id="deleteLiveChats">Click to delete your Live Chats</button>
+        <button style="flex:0.3;" class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
-    <div style="" >
-        <div style="" class="collapsible" id="discussion">
+    <div class="collapsible" id="discussion">
             <p>
 
         Go to https://www.youtube.com/user/{YOUR USERNAME}/discussion</p></div>
@@ -65,11 +73,7 @@
         
 
         <button style="flex:0.3; display:none; background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
-    </div>
-
-    <div style="display:flex; border: 1px;">
-        <div class="content"></div>
-    </div>
+    
 
     <script src="popup.js"></script>
 </body>

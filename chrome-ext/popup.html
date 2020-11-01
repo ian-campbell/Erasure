@@ -19,7 +19,7 @@
     .content {
         padding: 0 18px;
         max-height: 0;
-        overflow: hidden;
+        overflow: auto;
         transition: max-height 0.2s ease-out;
         background-color: #f1f1f1;
     }
@@ -31,7 +31,7 @@
         background-color: #eee;
         color: #444;
         cursor: pointer;
-        width: 50%;
+        width: 100%;
         border: none;
         text-align: left;
         outline: none;
@@ -52,19 +52,13 @@
         <button style="flex:0.3;" id="liveChats">Click to navigate to your Live Chats history</button>
         <button style="flex:0.3; background-color: #4688f1;" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
-    <div style="display:flex;" >
-        <button style="flex:0.3;" class="collapsible" type="button" id="discussion">Open collapsible</button>
-
-            <div class="content">
-
-                Go to your YouTube Channel Discussion tab at https://www.youtube.com/user/{YOUR USERNAME}/discussion
-
-            </div>
+    <div style="" >
+        <div style="" class="collapsible" id="discussion">Go to https://www.youtube.com/user/{YOUR USERNAME}/discussion</div>
 
 
         
 
-        <button style="flex:0.3; background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
+        <button style="flex:0.3; display:none; background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
     </div>
 
     <div style="display:flex; border: 1px;">

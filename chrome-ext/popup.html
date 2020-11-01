@@ -40,9 +40,8 @@
     .collapsible {
         background-color: #eee;
         color: #444;
-        cursor: pointer;
         border-radius: 3px;
-        height: 100px;
+        height: 35px;
         padding: 10px;
         margin: 10px;
         outline: 2px;
@@ -65,16 +64,20 @@
     </div>
     <div style="display:flex;">
 
-        <div class="collapsible" style="flex:0.3;">
-            Go to https://www.youtube.com/user/{YOUR_USERNAME}/discussion
-
+        <div class="collapsible" style="text-align:left" id="discussions">          Go to https://www.youtube.com/user/{YOUR_USERNAME}/discussion
         </div>
+    </div>
+
+    <div style="display:flex;">
+
+        <button style="background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
+    
+    </div>
 
 
         
 
-        <button style="flex:0.3; background-color: #4688f1;" id="deleteDiscussions">Click to delete your Discussions</button>
-    </div>
+        
     
 
     <script src="popup.js"></script>

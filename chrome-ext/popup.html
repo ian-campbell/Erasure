@@ -16,6 +16,7 @@
         width: 120px;
         padding: 10px;
         margin: 10px;
+        box-shadow: 0px 0px 3px 2px rgba(21, 21, 21, 0.6);
         outline: 2px;
     }
     button:hover{
@@ -58,23 +59,23 @@
 </head>
 
 <body>
-    <div style="display:flex; border: 2px solid grey;">
+    <div style="display:flex;">
         <button style="width: 50%" id="navigate">Click to navigate to your comment history</button>
 
         <button style="width: 50%" class="delete" id="deleteComments">Click to delete all comments</button>
     </div>
-    <div style="display:flex; border: 2px solid grey; border-top: 1px">
+    <div style="display:flex;">
         <button style="width: 50%"  id="liveChats">Click to navigate to your Live Chats history</button>
         <button style="width: 50%"  class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
-    <div style="display:flex; max-width: 400px; border: 2px solid grey; border-bottom: 0px; border-top: 1px">
+    <div style="display:flex;">
 
         <div class="collapsible" style="text-align:left" id="discussions">          Go to https://www.youtube.com/user/{YOUR_USERNAME}/discussion
         </div>
 
     </div>
 
-    <div style="border: 2px solid grey; border-top: 0px">
+    <div>
         <button class="delete" style="width: 380px; height:45px;" id="deleteDiscussions">Click to delete your Discussions</button>
     </div>
 

@@ -4,26 +4,29 @@
 <head>
     <style>
     body {
+        background-color: #303030;
         width:400px;
         height:400px;
     }
     button {
+        background-color: rgb(42, 71, 108);
+        color: white;
         border-radius: 3px;
         height: 100px;
-        width: 100px;
+        width: 120px;
         padding: 10px;
         margin: 10px;
         outline: 2px;
     }
     button:hover{
-        background-color:#e6e38c;
+        filter: brightness(1.50);
         cursor:pointer;
     }
     button:active{
-        background-color:green;
+        opacity: .7;
     }
     .delete{
-        background-color:#4688f1;
+        
     }
 
 
@@ -37,6 +40,7 @@
 
 
     .collapsible {
+        position: relative;
         background-color: #eee;
         color: #444;
         border-style:groove;
@@ -54,27 +58,25 @@
 </head>
 
 <body>
-    <div style="display:flex;">
-        <button style="flex:0.3;" id="navigate">Click to navigate to your comment history</button>
+    <div style="display:flex; border: 2px solid grey">
+        <button style="width: 50%" id="navigate">Click to navigate to your comment history</button>
 
-        <button style="flex:0.3;" class="delete" id="deleteComments">Click to delete all comments</button>
+        <button style="width: 50%" class="delete" id="deleteComments">Click to delete all comments</button>
     </div>
-    <div style="display:flex;">
-        <button style="flex:0.3;" id="liveChats">Click to navigate to your Live Chats history</button>
-        <button style="flex:0.3;" class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
+    <div style="display:flex; border: 2px solid grey; border-top: 1px">
+        <button style="width: 50%"  id="liveChats">Click to navigate to your Live Chats history</button>
+        <button style="width: 50%"  class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
-    <div style="display:flex;">
+    <div style="display:flex; max-width: 400px; border: 2px solid grey; border-bottom: 0px; border-top: 1px">
 
         <div class="collapsible" style="text-align:left" id="discussions">          Go to https://www.youtube.com/user/{YOUR_USERNAME}/discussion
         </div>
+
     </div>
 
-    <div style="display:flex;">
-
-        <button class="delete" style="width:100%; height:45px;" id="deleteDiscussions">Click to delete your Discussions</button>
-    
+    <div style="border: 2px solid grey; border-top: 0px">
+        <button class="delete" style="width: 380px; height:45px;" id="deleteDiscussions">Click to delete your Discussions</button>
     </div>
-
 
         
 

@@ -45,31 +45,26 @@ function listClick(element, callback1, callback2, callback3) {
 
 //check for available comments
 function commentsAvailable () {
-    for(x of document.getElementsByTagName("ytd-comment-history-entry-renderer")) {
-        if(x.getAttribute("is-dismissed") == null) {
-            return true;
-        }
+    var m = document.getElementsByClassName("YxbmAc");
+
+    if(m.length > 0){
+        return true;
     }
     return false;
 }
 
-function doOne(i) {
+var myfunc = function(item, index){
+    item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
+};
+
+function doOne() {
     if(commentsAvailable()) {
-        listClick(myList[i], itemClick, confirmClick, function() {
-            ++i;
-            if (i < myList.length) {
-                doOne(i);
-            }else {
-                console.log("erasure: attempting to retry in %s ms",PAUSE);
-                setTimeout(()=>{
-                    doOne(0);
-                },PAUSE);
-            }
-        });
-    } else {
+        Array.from(m).forEach(myfunc);
+        }
+    else {
         console.log("erasure: there are no comments, exiting.");
     }
 }
 
-doOne(0);
+doOne();
 

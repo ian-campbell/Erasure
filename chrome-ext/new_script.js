@@ -14,10 +14,7 @@ function checkBox(){
     checkbox[0].checked = true;
     var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
     c[0].click();
-
 }
-
-
 
 
 //check for available comments
@@ -29,14 +26,14 @@ function commentsAvailable () {
     return false;
 }
 
-var myfunc = function(item, index){
+var myFunc = function(item, index){
 
     item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
 };
 
-function newOne(elements_coll) {
+function newOne(elements_coll, myFunc) {
     if(commentsAvailable()) {
-        Array.from(elements_coll).forEach(myfunc);
+        Array.from(elements_coll).forEach(myFunc);
         }
     else {
         console.log("erasure: there are no comments, exiting.");

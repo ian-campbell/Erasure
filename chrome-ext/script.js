@@ -6,8 +6,6 @@ var DELAY = 0;
 // (electronoob: 800 was the ideal value for my machine)
 var PAUSE = 1000;
 
-var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");
-
 
 //second delete button
 function confirmClick(callback3) {
@@ -46,9 +44,18 @@ function commentsAvailable () {
     }
     return false;
 }
+//check for available comments in new YouTube Comment History page
+function commentsAvailable2 () {
+    var m = document.getElementsByClassName("YxbmAc");
+    if(m.length > 0){
+        return true;
+    }
+    return false;
+}
 
 function doOne(i) {
     if(commentsAvailable()) {
+        var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");
         listClick(myList[i], itemClick, confirmClick, function() {
             ++i;
             if (i < myList.length) {
@@ -65,4 +72,41 @@ function doOne(i) {
     }
 }
 
-doOne(0);
+function checkBox(){
+
+    var checkbox = document.getElementsByClassName("VfPpkd-muHVFf-bMcfAe");
+    if (checkbox.length > 0){  
+        checkbox[0].checked = true;
+        var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
+        c[0].click();
+    }
+}
+
+function newOne(elements_coll, myFunc) {
+    if(commentsAvailable2()) {
+        Array.from(elements_coll).forEach(myFunc);
+        }
+    else {
+        console.log("erasure: there are no comments, exiting.");
+    }
+}
+
+var myFunc = function(item, index){
+    /*checkBox();*/
+    item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
+}
+
+
+/* Determine which YouTube Comment History page is being displayed */
+function wrapper(){
+    var olde = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");
+    var newe = document.getElementsByClassName("YxbmAc");
+    if (olde.length > 0){
+        doOne(0);
+    }
+    if (newe.length > 0){
+        newOne(newe, myFunc);
+    }
+}
+
+wrapper();

@@ -9,6 +9,12 @@ var PAUSE = 1000;
 var myList = document.getElementsByClassName("YxbmAc");
 
 
+var checkbox = document.getElementsByClassName("VfPpkd-muHVFf-bMcfAe");
+checkbox[0].checked = true;
+var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");
+c[0].click();
+
+
 //second delete button
 function confirmClick(callback3) {
     try{
@@ -66,3 +72,4 @@ function doOne(i) {
 }
 
 doOne(0);
+

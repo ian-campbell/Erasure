@@ -82,6 +82,7 @@ function checkBox(){
     }
 }
 
+/* Function for new YouTube comments history page */
 function newOne(elements_coll, myFunc) {
     if(commentsAvailable2()) {
         Array.from(elements_coll).forEach(myFunc);

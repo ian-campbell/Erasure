@@ -18,7 +18,7 @@ function checkBox(){
 
 
 //check for available comments
-function commentsAvailable () {
+function commentsAvailable2 () {
     var m = document.getElementsByClassName("YxbmAc");
     if(m.length > 0){
         return true;
@@ -27,12 +27,11 @@ function commentsAvailable () {
 }
 
 var myFunc = function(item, index){
-
     item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
 };
 
 function newOne(elements_coll, myFunc) {
-    if(commentsAvailable()) {
+    if(commentsAvailable2()) {
         Array.from(elements_coll).forEach(myFunc);
         }
     else {

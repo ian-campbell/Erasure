@@ -3,9 +3,6 @@ let navigate = document.getElementById('navigate');
 let deleteComments = document.getElementById('deleteComments');
 let deleteLiveChats = document.getElementById('deleteLiveChats');
 let liveChats = document.getElementById('liveChats');
-let discussions = document.getElementById('discussions');
-let deleteDiscussions = document.getElementById('deleteDiscussions');
-let coll = document.getElementsByClassName("collapsible");
 
 
 chrome.storage.sync.get('color', function(data) {
@@ -42,25 +39,4 @@ deleteLiveChats.onclick = function(element) {
     });
 };
 
-deleteDiscussions.onclick = function(element) {
-    chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
-        chrome.tabs.executeScript(
-            tabs[0].id, { file: 'discussion.js' });
-    });
-};
 
-/*
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-*/

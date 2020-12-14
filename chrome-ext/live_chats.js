@@ -41,31 +41,40 @@ function listClick(element, callback1, callback2, callback3) {
     setTimeout(callback1, DELAY, callback2, callback3);
 }
 
+function checkboxClick(element, callbackcheck){
+    element.checked = true;
+    setTimeout(callbackcheck, PAUSE);
+}
+function checkboxOK(){
+    var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
+    c[0].click();
+}
 
+/* Check for a Google permissions checkbox and check the checkbox and click OK */
 function checkBox(){
+
     var checkbox = document.getElementsByClassName("VfPpkd-muHVFf-bMcfAe");
-    if (checkbox.length > 0){  
-        checkbox[0].checked = true;
-        var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
-        c[0].click();
+    if (checkbox.length > 0){ 
+        console.log("Checkbox found");
+        setTimeout(checkboxClick, PAUSE, checkbox[0], checkboxOK);
+    }
+    else{
+        console.log("erasure: no checkbox");
     }
 }
 
 /* Function for new YouTube comments history page */
-function newOne(elements_coll, myFunc) {
-    if(commentsAvailable2()) {
+function newOne() {
+    if (commentsAvailable2()) {
+        var elements_coll = document.getElementsByClassName("YxbmAc");
         Array.from(elements_coll).forEach(myFunc);
-        }
+        console.log("erasure: attempting to retry in %s ms",PAUSE);
+        setTimeout(()=>{
+            newOne();
+        },PAUSE);
+    }
     else {
-        setTimeout( () => {
-            if(commentsAvailable2()) {
-                var e = document.getElementsByClassName("YxbmAc");
-                Array.from(e).forEach(myFunc);
-            }
-            else{
-                console.log("erasure: no more comments, exiting.");
-            }
-        },PAUSE );
+        console.log("erasure: there are no more comments, exiting.");
     }
 }
 
@@ -115,13 +124,11 @@ function doOne(i) {
 
 /* Determine which YouTube Comment History page is being displayed */
 function wrapper(){
-    var olde = document.getElementsByClassName("style-scope yt-button-renderer style-default size-default");
-    var newe = document.getElementsByClassName("YxbmAc");
-    if (olde.length > 0){
+    if (commentsAvailable()){
         doOne(0);
     }
-    if (newe.length > 0){
-        newOne(newe, myFunc);
+    if (commentsAvailable2()){
+        newOne();
     }
 }
 

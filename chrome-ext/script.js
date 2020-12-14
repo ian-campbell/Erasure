@@ -76,9 +76,13 @@ function checkBox(){
 
     var checkbox = document.getElementsByClassName("VfPpkd-muHVFf-bMcfAe");
     if (checkbox.length > 0){  
-        checkbox[0].checked = true;
-        var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
-        c[0].click();
+        setTimeout(()=>{
+            checkbox[0].checked = true;
+        }, 200);
+        setTimeout(()=>{
+            var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
+            c[0].click();
+        }, 200);
     }
 }
 

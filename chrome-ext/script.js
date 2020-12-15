@@ -44,14 +44,7 @@ function commentsAvailable () {
     }
     return false;
 }
-//check for available comments in new YouTube Comment History page
-function commentsAvailable2 () {
-    var m = document.getElementsByClassName("YxbmAc");
-    if(m.length > 0){
-        return true;
-    }
-    return false;
-}
+
 
 function doOne(i) {
     if(commentsAvailable()) {
@@ -94,6 +87,16 @@ function checkBox(){
     }
 }
 
+//check for available comments in new YouTube Comment History page
+function commentsAvailable2 () {
+    var m = document.getElementsByClassName("YxbmAc");
+    if(m.length > 0){
+        console.log('erasure: comments are available.');
+        return true;
+    }
+    return false;
+}
+
 /* Updated function to delete comments on new comment history page */
 function newOne() {
     if (commentsAvailable2()) {
@@ -111,7 +114,12 @@ function newOne() {
 
 var myFunc = function(item, index){
     checkBox();
-    item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
+    try{ 
+        item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
+    }
+    catch{
+        item.querySelectorAll(".VfPpkd-Bz112c-LgbsSe")[0].click();
+    }
 }
 
 

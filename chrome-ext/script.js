@@ -6,7 +6,6 @@ var DELAY = 0;
 // (electronoob: 800 was the ideal value for my machine)
 var PAUSE = 1000;
 
-
 //second delete button
 function confirmClick(callback3) {
     try{
@@ -45,7 +44,6 @@ function commentsAvailable () {
     return false;
 }
 
-
 function doOne(i) {
     if(commentsAvailable()) {
         var myList = document.getElementsByClassName("dropdown-trigger style-scope ytd-menu-renderer");
@@ -67,7 +65,7 @@ function doOne(i) {
 
 function checkboxClick(element, callbackcheck){
     element.checked = true;
-    setTimeout(callbackcheck, PAUSE);
+    setTimeout(callbackcheck, 200);
 }
 function checkboxOK(){
     var c = document.getElementsByClassName("VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc");    
@@ -80,7 +78,7 @@ function checkBox(){
     var checkbox = document.getElementsByClassName("VfPpkd-muHVFf-bMcfAe");
     if (checkbox.length > 0){ 
         console.log("Checkbox found");
-        setTimeout(checkboxClick, PAUSE, checkbox[0], checkboxOK);
+        setTimeout(checkboxClick, 200, checkbox[0], checkboxOK);
     }
     else{
         console.log("erasure: no checkbox");
@@ -121,7 +119,6 @@ var myFunc = function(item, index){
         item.querySelectorAll(".VfPpkd-Bz112c-LgbsSe")[0].click();
     }
 }
-
 
 /* Determine which YouTube Comment History page is being displayed */
 function wrapper(){

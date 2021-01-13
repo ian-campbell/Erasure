@@ -31,26 +31,32 @@ openFilter = () => {
 }
 
 
-const PAUSE = 1000;
-var starter = document.getElementsByClassName('sp_ImHyMYe7JWT_3x');
+const PAUSE = 500;
 clik = () => {
-    let g = document.getElementsByClassName("sp_d1AIRL-Hywn_3x");
-    g[0].click();
+    var s = document.querySelectorAll('[data-pagelet="root"]');
+    try{
+        s[2].getElementsByTagName('i')[0].click();
+    }
+    catch{
+        setTimeout(()=>{
+            s[2].getElementsByTagName('i')[0].click();
+        }, 1500)
+    }   
 }
 
 getList = () => {
-    let n = document.getElementsByClassName("sp_k2A2bGWLzV9_3x");
+    var n = document.querySelectorAll('[aria-label="Action options"]');
     return n;
 }
 
 myfunc = () => {
     if (commentsAvailable()){
         var myList = getList();
-        myList[4].click();
+        myList[0].click();
         setTimeout(()=>{
             clik();
         }, PAUSE);
-        if (myList.length > 5){
+        if (myList.length > 0){
             setTimeout(()=>{
                 myfunc();
             }, PAUSE);
@@ -62,12 +68,10 @@ myfunc = () => {
         }
     }
 }
-
-
 //check for available comments
 commentsAvailable = () => {
-    let comments = document.getElementsByClassName("sp_k2A2bGWLzV9_3x");
-    if (comments.length > 5){
+    let comments = document.querySelectorAll('[aria-label="Action options"]');
+    if (comments.length >= 1){
         return true;
     }
     else {

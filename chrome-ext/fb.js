@@ -32,6 +32,7 @@ openFilter = () => {
 
 
 const PAUSE = 500;
+const RELOAD = 3000;
 clik = () => {
     var s = document.querySelectorAll('[data-pagelet="root"]');
     try{
@@ -61,11 +62,14 @@ myfunc = () => {
                 myfunc();
             }, PAUSE);
         }
-        else{ console.log("erasure: attempting to retry in 1000 ms");
+        else{ console.log("erasure: attempting to retry in 3000 ms");
             setTimeout(()=>{
                 myfunc();
-            },PAUSE);
+            },RELOAD);
         }
+    }
+    else{ 
+        console.log("Erasure completed, exiting.");
     }
 }
 //check for available comments

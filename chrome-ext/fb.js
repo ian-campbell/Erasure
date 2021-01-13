@@ -6,11 +6,11 @@ clik = () => {
     $(".sp_d1AIRL-Hywn_3x").click();
 }
 
-myfunc = (data, myfunc2) => {
+myfunc = (data) => {
     var myList = data;
     for (var i=15; i < myList.length; i++) {
         myList[i].click()
-        setTimeout(myfunc2, 1000); 
+        setTimeout($(".sp_d1AIRL-Hywn_3x").click(), 1000); 
     }
 }
 

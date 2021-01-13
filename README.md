@@ -19,3 +19,7 @@ Now deletes Live Chats
 Update 1.9
 
 Now deletes channel Discussions
+
+Update 2.0.1 
+
+Now works on the new YouTube comment history page.

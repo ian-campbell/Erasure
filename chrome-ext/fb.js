@@ -1,12 +1,11 @@
-var g = document.getElementsByClassName("sp_k2A2bGWLzV9_3x")
-g[4].click();
-$(".sp_d1AIRL-Hywn_3x").click()
-document.getElementsByClassName('sp_ImHyMYe7JWT_3x')
-//parent container?
-document.getElementsByClassName('aov4n071')
+
 
 var m = document.querySelectorAll('[aria-label="Action options"]');
+m[0].click();
 var s = document.querySelectorAll('[data-pagelet="root"]');
+s[2].getElementsByTagName('i')[0].click()
+
+
 
 var t = Array.from(document.querySelectorAll('div'))
   .find(el => el.textContent === 'Activity Log');
@@ -21,9 +20,6 @@ sortByComments = () => {
     v[0].click();
     let save = document.querySelectorAll("[aria-label='Save Changes']");
     save[0].click();
-    setTimeout(() => {
-        myfunc();
-    }, 5000)
 }
 
 openFilter = () => {

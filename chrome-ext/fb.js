@@ -31,7 +31,7 @@ openFilter = () => {
 }
 
 
-const PAUSE = 500;
+const PAUSE = 5000;
 const RELOAD = 3000;
 clik = () => {
     var s = document.querySelectorAll('[data-pagelet="root"]');
@@ -44,27 +44,43 @@ clik = () => {
         }, 1500)
     }   
 }
-
 getList = () => {
     var n = document.querySelectorAll('[aria-label="Action options"]');
     return n;
 }
+queryErrorCheck = () => {
+    let e = document.querySelectorAll('[aria-label="Query Error"]');
+    if (e.length >= 1){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
-myfunc = () => {
+myfunc = (i) => {
+    if (queryErrorCheck()){
+        let r = document.querySelectorAll('[aria-label="OK"]');
+        r[0].click();
+        i = i + 1;
+        setTimeout(() => {
+            myfunc(i);
+        }, 5000)
+    }
     if (commentsAvailable()){
         var myList = getList();
-        myList[0].click();
+        myList[i].click();
         setTimeout(()=>{
             clik();
         }, PAUSE);
         if (myList.length > 0){
             setTimeout(()=>{
-                myfunc();
+                myfunc(i);
             }, PAUSE);
         }
         else{ console.log("erasure: attempting to retry in 3000 ms");
             setTimeout(()=>{
-                myfunc();
+                myfunc(i);
             },RELOAD);
         }
     }

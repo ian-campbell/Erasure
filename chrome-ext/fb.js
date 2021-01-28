@@ -31,8 +31,8 @@ openFilter = () => {
 }
 
 
-const PAUSE = 5000;
-const RELOAD = 3000;
+const PAUSE = 2000;
+const RELOAD = 5000;
 clik = () => {
     var s = document.querySelectorAll('[data-pagelet="root"]');
     try{

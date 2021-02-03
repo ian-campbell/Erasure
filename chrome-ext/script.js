@@ -29,7 +29,12 @@ function checkBox(){
     }
 }
 
-//check for available comments in new YouTube Comment History page
+// scroll to the bottom of the page
+function autoscroll () {
+    window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+// check for available comments
 function commentsAvailable2 () {
     var m = document.getElementsByClassName("YxbmAc");
     if(m.length > 0){
@@ -65,10 +70,9 @@ function main() {
 }
 
 /* This function clicks the delete button for both regular and 
-   non-G-suite account users. Either deletes the comment or opens
-   a new popup to delete the comment */
+   non-G-suite account users. */
 var myFunc = function(item, index){
-    checkBox();
+    //checkBox();
     try{ 
         item.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
     }

@@ -7,9 +7,9 @@ Navigate to https://www.youtube.com/feed/history/comment_history and then paste 
 You can also add the Erasure Chrome extension: https://chrome.google.com/webstore/detail/erasure/lkhceldiinefjkocccdmpgheheeddfmb?hl=en-US
 
 
-# For instructions on how to contribute to the project, read CONTRIBUTING.md
+## For instructions on how to contribute to the project, read CONTRIBUTING.md
 
 
 Update 2.0.1 
 
-Now works on the new YouTube comment history page.
+Now works (sorta) on the new YouTube comment history page. Issues remain.

@@ -16,6 +16,7 @@ function checkboxOK(){
 }
 
 /* Check for a Google permissions checkbox and check the checkbox and click OK */
+/* Doesn't really work */
 function checkBox(){
 
     var checkbox = document.getElementsByClassName("VfPpkd-muHVFf-bMcfAe");
@@ -38,7 +39,7 @@ function commentsAvailable2 () {
     return false;
 }
 
-/* Updated function to delete comments on new comment history page */
+/* Main function */
 function main() {
     if (commentsAvailable2()) {
         var elements_coll = document.getElementsByClassName("YxbmAc");
@@ -53,6 +54,9 @@ function main() {
     }
 }
 
+/* This function handles the delete button popup for both regular and 
+   non-G-suite account users. Either deletes the comment or opens
+   a new popup to delete the comment */
 var myFunc = function(item, index){
     checkBox();
     try{ 

@@ -41,20 +41,30 @@ function commentsAvailable2 () {
 
 /* Main function */
 function main() {
+    // check for available comments; if none, exit
     if (commentsAvailable2()) {
+
+        // create javascript collection of all comment elements
         var elements_coll = document.getElementsByClassName("YxbmAc");
+
+        // run myFunc() for each element in the array
         Array.from(elements_coll).forEach(myFunc);
+
+        // after array runs and there are no more comments, wait 1000ms
         console.log("erasure: attempting to retry in %s ms",PAUSE);
+
+        // recursively run the main() function again
         setTimeout(()=>{
             main();
         },PAUSE);
     }
+    // no comments available, exit
     else {
         console.log("erasure: there are no more comments, exiting.");
     }
 }
 
-/* This function handles the delete button popup for both regular and 
+/* This function clicks the delete button for both regular and 
    non-G-suite account users. Either deletes the comment or opens
    a new popup to delete the comment */
 var myFunc = function(item, index){

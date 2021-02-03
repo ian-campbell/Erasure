@@ -3,11 +3,6 @@
     "version": "2.0.2",
     "description": "Clear your YouTube comment history",
     "permissions": ["activeTab", "declarativeContent", "storage"],
-    "background":
-    {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
     "browser_action":
     {
         "default_popup": "popup.html",
@@ -26,6 +21,5 @@
         "48": "images/logo_48.png",
         "128": "images/logo_128.png"
     },
-    "options_page": "options.html",
     "manifest_version": 2
 }

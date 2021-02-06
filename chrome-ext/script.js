@@ -48,6 +48,8 @@ function commentsAvailable2 () {
 function main() {
     // check for available comments; if none, exit
     if (commentsAvailable2()) {
+
+        // scroll all the way to bottom of comment list
         //autoscroll();
 
         // create javascript collection of all comment elements

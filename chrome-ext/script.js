@@ -68,16 +68,16 @@ function main() {
 
         // run myFunc() for each element in the array
         Array.from(elements_coll).forEach((element, index) => {
-            setTimeout(myFunc(element, index), PAUSE);
+            setTimeout(myFunc(element, index), PAUSE * index);
         )};
 
         // after array runs and there are no more comments, wait 1000ms
         console.log("erasure: attempting to retry in %s ms",PAUSE);
 
         // recursively run the main() function again
-        setTimeout(()=>{
+        /*setTimeout(()=>{
             main();
-        },PAUSE);
+        },PAUSE);*/
     }
     // no comments available, exit
     else {

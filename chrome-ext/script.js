@@ -34,6 +34,11 @@ function autoscroll () {
     window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
 }
 
+// check if all comments are loaded
+function reachedTheEnd() {
+
+}
+
 // check for available comments
 function commentsAvailable2 () {
     var m = document.getElementsByClassName("YxbmAc");

@@ -36,7 +36,12 @@ function autoscroll () {
 
 // check if all comments are loaded
 function reachedTheEnd() {
-
+    if(document.getElementsByClassName("hV1B3e")[0].innerText === ""){
+        autoscroll();
+    }
+    else{
+        console.log('true');
+    }
 }
 
 // check for available comments

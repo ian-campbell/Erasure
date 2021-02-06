@@ -68,7 +68,7 @@ function main() {
 
         // run myFunc() for each element in the array
         Array.from(elements_coll).forEach((element, index) => {
-            setTimeout(myfunc(element, index), PAUSE);
+            setTimeout(myFunc(element, index), PAUSE);
         )};
 
         // after array runs and there are no more comments, wait 1000ms

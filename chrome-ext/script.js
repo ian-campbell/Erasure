@@ -48,6 +48,7 @@ function commentsAvailable2 () {
 function main() {
     // check for available comments; if none, exit
     if (commentsAvailable2()) {
+        //autoscroll();
 
         // create javascript collection of all comment elements
         var elements_coll = document.getElementsByClassName("YxbmAc");

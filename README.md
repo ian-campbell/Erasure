@@ -7,7 +7,7 @@ Navigate to https://www.youtube.com/feed/history/comment_history and then paste 
 You can also add the Erasure Chrome extension: https://chrome.google.com/webstore/detail/erasure/lkhceldiinefjkocccdmpgheheeddfmb?hl=en-US
 
 
-## For instructions on how to contribute to the project, read CONTRIBUTING.md
+Read CONTRIBUTING.md for todo list
 
 
 Update 2.0.1 

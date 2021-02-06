@@ -61,12 +61,15 @@ function main() {
 
         // scroll all the way to bottom of comment list
         //autoscroll();
+        reachedTheEnd();
 
         // create javascript collection of all comment elements
         var elements_coll = document.getElementsByClassName("YxbmAc");
 
         // run myFunc() for each element in the array
-        Array.from(elements_coll).forEach(myFunc);
+        Array.from(elements_coll).forEach((element, index) => {
+            setTimeout(myfunc(element, index), PAUSE);
+        )};
 
         // after array runs and there are no more comments, wait 1000ms
         console.log("erasure: attempting to retry in %s ms",PAUSE);

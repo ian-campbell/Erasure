@@ -25,7 +25,7 @@ function commentsAvailable2 () {
 
 /* This function clicks the delete button for both regular and 
    non-G-suite account users. */
-   function deleteClick(element, callback1){
+function deleteClick(element, callback1){
     try{ 
         element.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
         setTimeout(callback1, DELAY);

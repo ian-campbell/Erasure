@@ -1,5 +1,5 @@
 // try 0, then try increasing values. this is delay between comment deletions
-var DELAY = 200;
+var DELAY = 0;
 
 // if script ends but yt has more comments loading then increase this pause value.
 // this provides 1 retry attempt between list updates. useful for slow cpu/network.

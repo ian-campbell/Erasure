@@ -4,20 +4,20 @@
 <head>
     <style>
     body {
-        background-color: #242424;
+        background-color: #212121;
         width:400px;
-        height:250px;
+        height:240px;
     }
     button {
         background-color: #4688f1;
         color: white;
-        border-radius: 3px;
+        border-radius: 15px;
         height: 100px;
         width: 120px;
         padding: 10px;
         margin: 10px;
         font-size: 16px;
-        box-shadow: 0px 0px 2px 1px rgba(25, 25, 25, 0.5);
+        box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.5);
         outline: 2px;
     }
     button:hover{
@@ -27,10 +27,7 @@
     button:active{
         opacity: .7;
     }
-    .delete{
-        
-    }
-
+    
 
     .content {
         padding: 0 18px;
@@ -62,18 +59,12 @@
 <body>
     <div style="display:flex;">
         <button style="width: 50%" id="navigate">Click to navigate to your comment history</button>
-
         <button style="width: 50%" class="delete" id="deleteComments">Click to delete all comments</button>
     </div>
     <div style="display:flex;">
         <button style="width: 50%"  id="liveChats">Click to navigate to your Live Chats history</button>
         <button style="width: 50%"  class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
     </div>
-
-        
-
-        
-    
 
     <script src="popup.js"></script>
 </body>

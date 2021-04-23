@@ -21,15 +21,11 @@ deleteComments.onclick = function(element) {
     });
 };
 navigate.onclick = function(element) {
-    chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
-        chrome.tabs.update(tabs[0].id, {url:'https://www.youtube.com/feed/history/comment_history'})
-    });
+    chrome.tabs.create({ active: true, url:'https://www.youtube.com/feed/history/comment_history'})
 };
 
 liveChats.onclick = function(element) {
-    chrome.tabs.query({ active: true, currentWindow: true}, function(tabs){
-        chrome.tabs.update(tabs[0].id, {url:'https://www.youtube.com/feed/history/live_chat_history'})
-    });
+    chrome.tabs.create({ active: true, url:'https://www.youtube.com/feed/history/live_chat_history'})
 };
 
 deleteLiveChats.onclick = function(element) {

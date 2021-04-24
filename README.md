@@ -12,4 +12,4 @@ Read CONTRIBUTING.md for todo list
 
 Update 2.0.1 
 
-Now works (sorta) on the new YouTube comment history page. Issues remain.
+Now works on the new YouTube comment history page. Issues remain.

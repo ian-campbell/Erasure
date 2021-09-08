@@ -77,10 +77,13 @@ function recursivelyClickDelete() {
     if (!btn || !btn.click) {
       throw "can't find button with click()";
     }
-    
-    btn.click();
+    // Watch the list for the comment to be removed so we can continue deleting.
     deletedObserver.observe(commentListElement, { subtree: true, childList: true });
+    btn.click();
 
+    // Start waiting to continue even if we don't see the list update.
+    // I don't know under what circumstances we'd hit this, but I'd rather not be surprised
+    // by a missed event causing the extension to quietly fail.
     pendingDeleteTimer = setTimeout(() => {
       if (++deletionsTimedOut >= MAX_TIMEOUTS_BEFORE_QUITTING) {
         console.error("erasure: timed out waiting for %d comments to be deleted. Quitting...");

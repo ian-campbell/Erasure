@@ -1,5 +1,5 @@
 // try 0, then try increasing values. this is delay between comment deletions
-var DELAY = 0;
+var DELAY = 5000;
 
 // if script ends but yt has more comments loading then increase this pause value.
 // this provides 1 retry attempt between list updates. useful for slow cpu/network.
@@ -40,8 +40,8 @@ function deleteClick(element, callback1){
 function main(i) {
   if(commentsAvailable2()) {
     deleteClick(myList[i], () => {
-      ++i;
-      if (i < myList.length) {
+      //++i;
+      if(myList.length > 1){
         main(i);
       }else {
         console.log("erasure: attempting to retry in %s ms",PAUSE);

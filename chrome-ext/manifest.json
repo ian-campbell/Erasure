@@ -1,8 +1,8 @@
 {
-    "name": "Erasure",
-    "version": "2.0.9",
+    "name": "YouTube Comment Deleter",
+    "version": "2.1.1",
     "description": "Clear your YouTube comment history",
-    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "permissions": ["activeTab", "storage"],
     "browser_action":
     {
         "default_popup": "popup.html",

@@ -2,14 +2,13 @@ const baseActivityPageURL =
   "https://myactivity.google.com/page?utm_source=my-activity&hl=en&page=";
 const deletionScript = "script.js";
 
-//relevant code
 
 // comment history
 deleteCommentHistory.onclick = function (element) {
   executeScriptInTab(chrome.tabs, chrome.scripting);
 };
 commentHistory.onclick = function (element) {
-  openTab(chrome.tabs, "youtube_comments");
+  openTab(chrome.tabs, "https://www.youtube.com/feed/history/comment_history");
 };
 
 // live chat history
@@ -18,7 +17,7 @@ deleteLiveChats.onclick = function (element) {
 };
 
 liveChats.onclick = function (element) {
-  openTab(chrome.tabs, "youtube_live_chat");
+  openTab(chrome.tabs, "https://www.youtube.com/feed/history/live_chat_history");
 };
 
 // community posts
@@ -27,12 +26,12 @@ deleteCommunityPosts.onclick = function (element) {
 };
 
 communityPosts.onclick = function (element) {
-  openTab(chrome.tabs, "youtube_posts_activity");
+  openTab(chrome.tabs, "https://myactivity.google.com/page?utm_source=my-activity&hl=en&page=youtube_posts_activity");
 };
 
 // reusable functions
 function openTab(tabs, page) {
-  targetPage = baseActivityPageURL + page;
+  targetPage = page;
   tabs.create({
     active: true,
     url: targetPage,

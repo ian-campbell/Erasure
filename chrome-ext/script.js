@@ -9,15 +9,19 @@ var PAUSE = 5000;
 var myList = document.getElementsByClassName("YxbmAc");
 
 // scroll to the bottom of the page
-function autoScroll () {
-  window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+function autoScroll() {
+  window.scrollTo({
+    left: 0,
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
 }
 
 // check for available comments
-function commentsAvailable2 () {
+function commentsAvailable2() {
   var m = document.getElementsByClassName("YxbmAc");
-  if(m.length > 0){
-    console.log('erasure: %s comments are available.', m.length);
+  if (m.length > 0) {
+    console.log("erasure: %s comments are available.", m.length);
     return true;
   }
   return false;
@@ -25,12 +29,11 @@ function commentsAvailable2 () {
 
 /* This function clicks the delete button for both regular and 
    non-G-suite account users. */
-function deleteClick(element, callback1){
-  try{ 
+function deleteClick(element, callback1) {
+  try {
     element.querySelectorAll(".VfPpkd-rymPhb-pZXsl")[1].click();
     setTimeout(callback1, DELAY);
-  }
-  catch{
+  } catch {
     element.querySelectorAll(".VfPpkd-Bz112c-LgbsSe")[0].click();
     setTimeout(callback1, DELAY);
   }
@@ -38,17 +41,17 @@ function deleteClick(element, callback1){
 
 /* Main function */
 function main(i) {
-  if(commentsAvailable2()) {
+  if (commentsAvailable2()) {
     deleteClick(myList[i], () => {
       //++i;
-      if(myList.length > 1){
+      if (myList.length > 1) {
         main(i);
-      }else {
-        console.log("erasure: attempting to retry in %s ms",PAUSE);
+      } else {
+        console.log("erasure: attempting to retry in %s ms", PAUSE);
         autoScroll();
-        setTimeout(()=>{
+        setTimeout(() => {
           main(0);
-        },PAUSE);
+        }, PAUSE);
       }
     });
   } else {

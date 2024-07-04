@@ -50,21 +50,35 @@
         font-size:14px;
         outline: 2px;
     }
+    
+    .flex-container {
+        display: flex;
+    }
 
+    .flex-container > div {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+    }
     </style>
 
 
 </head>
 
 <body>
-    <div style="display:flex;">
-        <button style="width: 50%" id="navigate">Click to navigate to your comment history</button>
-        <button style="width: 50%" class="delete" id="deleteComments">Click to delete all comments</button>
+    <div class="flex-container">
+        <button style="width: 50%" id="commentHistory"><div>Click to navigate to your Comment history</div></button>
+        <button style="width: 50%" class="delete" id="deleteCommentHistory"><div>Click to delete all Comments</div></button>
     </div>
-    <div style="display:flex;">
-        <button style="width: 50%"  id="liveChats">Click to navigate to your Live Chats history</button>
-        <button style="width: 50%"  class="delete" id="deleteLiveChats">Click to delete your Live Chats</button>
+    <div class="flex-container">
+        <button style="width: 50%"  id="liveChats"><div>Click to navigate to your Live Chat history</div></button>
+        <button style="width: 50%"  class="delete" id="deleteLiveChats"><div>Click to delete all Live Chats</div></button>
     </div>
+    <div class="flex-container">
+        <button style="width: 50%"  id="communityPosts"><div>Click to navigate to your Community Post history</div></button>
+        <button style="width: 50%"  class="delete" id="deleteCommunityPosts"><div>Click to delete all Community Posts</div></button>
+    </div>    
     <script src="popup.js"></script>
 </body>
 

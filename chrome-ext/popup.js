@@ -1,38 +1,49 @@
-let changeColor = document.getElementById('deleteComments');
-let navigate = document.getElementById('navigate');
-let deleteComments = document.getElementById('deleteComments');
-let deleteLiveChats = document.getElementById('deleteLiveChats');
-let liveChats = document.getElementById('liveChats');
+const baseActivityPageURL =
+  "https://myactivity.google.com/page?utm_source=my-activity&hl=en&page=";
+const deletionScript = "script.js";
 
+//relevant code
 
-chrome.storage.sync.get('color', function(data) {
-    changeColor.style.backgroundColor = data.color;
-    changeColor.setAttribute('value', data.color);
-});
+// comment history
+deleteCommentHistory.onclick = function (element) {
+  executeScriptInTab(chrome.tabs, chrome.scripting);
+};
+commentHistory.onclick = function (element) {
+  openTab(chrome.tabs, "youtube_comments");
+};
 
+// live chat history
+deleteLiveChats.onclick = function (element) {
+  executeScriptInTab(chrome.tabs, chrome.scripting);
+};
 
+liveChats.onclick = function (element) {
+  openTab(chrome.tabs, "youtube_live_chat");
+};
 
-//relevant code 
-deleteComments.onclick = function(element) {
-    let color = element.target.value;
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.executeScript(
-            tabs[0].id, { file: 'script.js' });
+// community posts
+deleteCommunityPosts.onclick = function (element) {
+  executeScriptInTab(chrome.tabs, chrome.scripting);
+};
+
+communityPosts.onclick = function (element) {
+  openTab(chrome.tabs, "youtube_posts_activity");
+};
+
+// reusable functions
+function openTab(tabs, page) {
+  targetPage = baseActivityPageURL + page;
+  tabs.create({
+    active: true,
+    url: targetPage,
+  });
+}
+
+function executeScriptInTab(tabs, scripting) {
+  tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    scripting.executeScript({
+      target: { tabId: tabs[0].id, allFrames: true },
+      files: [deletionScript],
     });
-};
-navigate.onclick = function(element) {
-    chrome.tabs.create({ active: true, url:'https://www.youtube.com/feed/history/comment_history'})
-};
-
-liveChats.onclick = function(element) {
-    chrome.tabs.create({ active: true, url:'https://www.youtube.com/feed/history/live_chat_history'})
-};
-
-deleteLiveChats.onclick = function(element) {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.executeScript(
-            tabs[0].id, { file: 'script.js' });
-    });
-};
-
-
+  });
+}

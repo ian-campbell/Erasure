@@ -2,7 +2,7 @@
     "name": "YouTube Comment Deleter",
     "version": "2.1.2",
     "description": "Clear your YouTube comment history",
-    "permissions": ["activeTab", "storage", "scripting"],
+    "permissions": ["activeTab", "scripting"],
     "action": {
         "default_popup": "popup.html",
         "default_icon":

@@ -11,6 +11,8 @@ Or navigate to https://www.youtube.com/feed/history/comment_history and then pas
 Read CONTRIBUTING.md for todo list
 
 
-Update 2.0.1 
+Update 2.2.1
 
-Now works on the new YouTube comment history page.
+Added progress bar and rate-limit handling. 
+
+

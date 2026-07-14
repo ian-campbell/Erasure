@@ -2,11 +2,39 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <style>
     body {
         background-color: #212121;
         width:400px;
-        height:240px;
+        height:auto;
+    }
+    .status-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        background-color: #333;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 8px 12px;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+    #statusText {
+        color: #ffffff;
+        overflow-wrap: anywhere;
+    }
+    #stopButton {
+        background-color: #c62828;
+        border-radius: 8px;
+        height: auto;
+        width: auto;
+        padding: 6px 14px;
+        margin: 0;
+        font-size: 13px;
+        box-shadow: none;
+        flex-shrink: 0;
     }
     button {
         background-color: #4688f1;
@@ -67,6 +95,10 @@
 </head>
 
 <body>
+    <div class="status-bar">
+        <span id="statusText">Idle</span>
+        <button id="stopButton">Stop</button>
+    </div>
     <div class="flex-container">
         <button style="width: 50%" id="commentHistory"><div>Click to navigate to your Comment history</div></button>
         <button style="width: 50%" class="delete" id="deleteCommentHistory"><div>Click to delete all Comments</div></button>
